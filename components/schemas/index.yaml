@@ -5,4 +5,4 @@ User:
 Team:
   $ref: "./team.yaml/#/Team"
 TeamMembers:
-  $ref: "./team_members.yaml/#/TeamMembers"
+  $ref: "./team.yaml/#/TeamMembers"
