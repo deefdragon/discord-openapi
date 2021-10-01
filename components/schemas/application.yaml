@@ -1,0 +1,102 @@
+Application:
+  title: Application Structure
+  type: object
+  description: Application Structure
+  properties:
+    id:
+      type: string
+      description: the id of the app
+      example: "172150183260323840"
+    name:
+      type: string
+      description: the name of the app
+      example: "Baba O-Riley"
+    icon:
+      type: string
+      description: the icon hash
+      example: null
+      nullable: true
+      externalDocs:
+        url: https://discord.com/developers/docs/reference#image-formatting
+    description:
+      type: string
+      description: the description of the app
+      example: "Test"
+    rpc_ogirins:
+      type: array
+      items:
+        type: string
+      description: an array of rpc origin urls, if rpc is enabled
+      example: null
+      nullable: true
+    bot_public:
+      type: boolean
+      description: when false only app owner can join the app's bot to guilds
+      example: true
+    bot_require_code_grant:
+      type: boolean
+      description: when true the app's bot will only join upon completion of the full oauth2 code grant flow
+      example: false
+    terms_of_service_url:
+      type: string
+      description: the url of the app's terms of service
+      example: null
+      nullable: true
+    privacy_policy_url:
+      type: string
+      description: the url of the app's privacy policy
+      example: null
+      nullable: true
+    owner:
+      type: object
+      description: partial user object containing info on the owner of the application
+      allOf:
+        - $ref: "./index.yaml/#/UserStructure"
+      nullable: true
+    summary:
+      type: string
+      description: if this application is a game sold on Discord, this field will be the summary field for the store page of its primary sku
+      example: "This is a game"
+    verify_key:
+      type: string
+      description: the hex encoded key for verification in interactions and the GameSDK's GetTicket
+      example: "1e0a356058d627ca38a5c8c9648818061d49e49bd9da9e3ab17d98ad4d6bg2u8"
+      nullable: true
+      externalDocs:
+        url: https://discord.com/developers/docs/game-sdk/applications#getticket
+    team:
+      allOf:
+        - $ref: "./index.yaml/#/Team"
+      description: if the application belongs to a team, this will be a list of the members of that team
+      nullable: true
+    guild_id:
+      type: string
+      description: if this application is a game sold on Discord, this field will be the guild to which it has been linked
+      example: "290926798626357260"
+      nullable: true
+    primary_sku_id:
+      type: string
+      description: if this application is a game sold on Discord, this field will be the id of the "Game SKU" that is created, if exists
+      example: "172150183260323840"
+      nullable: true
+    slug:
+      type: string
+      description: if this application is a game sold on Discord, this field will be the URL slug that links to the store page
+      example: "test"
+      nullable: true
+    cover_image:
+      type: string
+      description: he application's default rich presence invite cover image hash
+      example: null
+      nullable: true
+      externalDocs:
+        url: https://discord.com/developers/docs/reference#image-formatting
+    flags:
+      type: number
+      description: the application's public flags
+      example: null
+      nullable: true
+      externalDocs:
+        url: https://discord.com/developers/docs/resources/application#application-object-application-flags
+  externalDocs:
+    url: https://discord.com/developers/docs/resources/application#application-object
