@@ -1,0 +1,90 @@
+UserStructure:
+  title: User Structure
+  type: object
+  description: User Structure
+  properties:
+    id:
+      type: string
+      description: User ID
+      example: "80351110224678912"
+    username:
+      type: string
+      description: the user's username, not unique across the platform
+      example: "Nelly"
+    discriminator:
+      type: string
+      description: the user's 4-digit discord-tag
+      example: "1337"
+    avatar:
+      type: string
+      description: the user's avatar hash
+      example: "8342729096ea3675442027381ff50dfe"
+      nullable: true
+      externalDocs:
+        url: https://discord.com/developers/docs/reference#image-formatting
+    bot:
+      type: boolean
+      description: whether the user belongs to an OAuth2 application
+      example: null
+      nullable: true
+    system:
+      type: boolean
+      description: whether the user is an Official Discord System user (part of the urgent message system)
+      example: null
+      nullable: true
+    mfa_enabled:
+      type: boolean
+      description: whether the user has two factor enabled on their account
+      example: null
+      nullable: true
+    banner:
+      type: string
+      description: the user's banner hash
+      example: "06c16474723fe537c283b8efa61a30c8"
+      nullable: true
+      externalDocs:
+        url: https://discord.com/developers/docs/reference#image-formatting
+    accent_color:
+      type: number
+      description: the user's banner color encoded as an integer representation of hexadecimal color code
+      example: 16711680
+      nullable: true
+    locale:
+      type: string
+      description: the user's chosen language option
+      example: null
+      nullable: true
+    verified:
+      type: boolean
+      description: whether the email on this account has been verified
+      example: true
+      nullable: true
+    email:
+      type: string
+      format: email
+      description: the user's email
+      example: "nelly@discord.com"
+      nullable: true
+    flags:
+      type: number
+      description: the flags on a user's account
+      example: 64
+      nullable: true
+      externalDocs:
+        url: https://discord.com/developers/docs/resources/user#user-object-user-flags
+    premium_type:
+      type: number
+      description: the type of Nitro subscription on a user's account
+      example: 1
+      nullable: true
+      externalDocs:
+        url: https://discord.com/developers/docs/resources/user#user-object-premium-types
+    public_flags:
+      type: number
+      description: the public flags on a user's account
+      example: 64
+      nullable: true
+      externalDocs:
+        url: https://discord.com/developers/docs/resources/user#user-object-user-flags
+  externalDocs:
+    url: https://discord.com/developers/docs/resources/user#user-object
