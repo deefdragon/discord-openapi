@@ -1,0 +1,8 @@
+Application:
+  $ref: "./application.yaml/#/Application"
+User:
+  $ref: "./user.yaml/#/User"
+Team:
+  $ref: "./team.yaml/#/Team"
+TeamMembers:
+  $ref: "./team_members.yaml/#/TeamMembers"
