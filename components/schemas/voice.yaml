@@ -1,0 +1,65 @@
+VoiceState:
+  title: VoiceState
+  type: object
+  description: Voice State
+  properties:
+    guild_id:
+      type: string
+      description: the guild id this voice state is for
+      nullable: true
+      example: null
+    channel_id:
+      type: string
+      description: the channel id this user is connected to
+      example: "157733188964188161"
+      nullable: true
+    user_id:
+      type: string
+      description: the user id this voice state is for
+      nullable: true
+      example: "80351110224678912"
+    member:
+      allOf:
+        - $ref: "./index.yaml/#/GuildMember"
+      description: the guild member this voice state is for
+      nullable: true
+      example: null
+    session_id:
+      type: string
+      description: the session id for this voice state
+      example: "90326bd25d71d39b9ef95b299e3872ff"
+    deaf:
+      type: boolean
+      description: whether this user is deafened by the server
+      example: false
+    mute:
+      type: boolean
+      description: whether this user is muted by the server
+      example: false
+    self_deaf:
+      type: boolean
+      description: whether this user is locally deafened
+      example: false
+    self_mute:
+      type: boolean
+      description: whether this user is locally muted
+      example: true
+    self_stream:
+      type: boolean
+      description: whether this user is streaming using "Go Live"
+      example: null
+      nullable: true
+    self_video:
+      type: boolean
+      description: whether this user's camera is enabled
+      example: false
+    suppress:
+      type: boolean
+      description: whether this user is muted by the current user
+      example: false
+    request_to_speak_timesamp:
+      type: string
+      description: the time at which the user requested to speak
+      example: "2021-03-31T18:45:31.297561+00:00"
+  externalDocs:
+    url: https://discord.com/developers/docs/resources/voice#voice-state-object
