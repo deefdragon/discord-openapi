@@ -1,0 +1,77 @@
+Role:
+  title: Role
+  type: object
+  description: Role
+  properties:
+    id:
+      type: string
+      description: role id
+      example: "41771983423143936"
+    name:
+      type: string
+      description: role name
+      example: "WE DEM BOYZZ!!!!!!"
+    color:
+      type: number
+      description: integer representation of hexadecimal color code
+      example: 3447003
+    hoist:
+      type: boolean
+      description: if this role is pinned in the user listing
+      example: true
+    icon:
+      type: string
+      description: role icon hash
+      example: "cf3ced8600b777c9486c6d8d84fb4327"
+      nullable: true
+      externalDocs:
+        url: https://discord.com/developers/docs/reference#image-formatting
+    unicode_emoji:
+      type: string
+      description: role unicode emoji
+      nullable: true
+      example: null
+    position:
+      type: number
+      description: position of this role
+      example: 1
+    permissions:
+      type: string
+      description: permission bit set
+      example: "66321471"
+    managed:
+      type: boolean
+      description: whether this role is managed by an integration
+      example: false
+    mentionable:
+      type: boolean
+      description: whether this role is mentionable
+      example: false
+    tags:
+      allOf:
+        - $ref: "#/RoleTags"
+      description: the tags this role has
+      nullable: true
+      example: null
+  externalDocs:
+    url: https://discord.com/developers/docs/topics/permissions#role-object
+
+RoleTags:
+  title: RoleTags
+  type: object
+  description: Role Tags
+  properties:
+    bot_id:
+      type: string
+      description: the id of the bot this role belongs to
+      nullable: true
+    integration_id:
+      type: string
+      description: the id of the integration this role belongs to
+      nullable: true
+    premium_subscriber:
+      type: boolean
+      description: whether this is the guild's premium subscriber role
+      nullable: true
+  externalDocs:
+    url: https://discord.com/developers/docs/topics/permissions#role-object-role-tags-structure
