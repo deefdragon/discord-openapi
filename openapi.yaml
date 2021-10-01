@@ -1,0 +1,44 @@
+openapi: 3.0.0
+info:
+  title: "Discord API"
+  version: "1.0.0"
+  description: Discord REST API
+  termsOfService: https://discord.com/developers/docs/policy
+  license:
+    name: Discord's license
+    url: https://discord.com/developers/docs/legal
+  contact:
+    name: Discord
+    email: contact@example.com
+    url: https://discord.com/developers/docs/intro
+servers:
+  - url: https://discord.com/api/v9
+    description: Production server for API v9
+  - url: https://canary.discord.com/api/v9
+    description: Canary releases server for API v9
+externalDocs:
+  url: https://discord.com/developers/docs/intro
+  description: Discord Developer Documentation
+paths:
+  /:
+    # todo
+    $ref: "./paths/index.yaml"
+components:
+  callbacks:
+    $ref: "./components/callbacks/index.yaml"
+  examples:
+    $ref: "./components/examples/index.yaml"
+  headers:
+    $ref: "./components/headers/index.yaml"
+  links:
+    $ref: "./components/links/index.yaml"
+  parameters:
+    $ref: "./components/parameters/index.yaml"
+  requestBodies:
+    $ref: "./components/request_bodies/index.yaml"
+  responses:
+    $ref: "./components/responses/index.yaml"
+  schemas:
+    $ref: "./components/schemas/index.yaml"
+  securitySchemes:
+    $ref: "./components/security_schemes/index.yaml"
