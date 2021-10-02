@@ -1,0 +1,114 @@
+Invite:
+  title: Invite
+  type: object
+  description: Represents a code that when used, adds a user to a guild or group DM channel.
+  properties:
+    code:
+      type: string
+      description: the invite code (unique ID)
+    guild:
+      allOf:
+        - $ref: "./index.yaml/#/Guild"
+      description: the guild this invite is for
+      nullable: true
+    channel:
+      allOf:
+        - $ref: "./index.yaml/#/Channel"
+      description: the channel this invite is for
+    inviter:
+      allOf:
+        - $ref: "./index.yaml/#/User"
+      description: the user who created the invite
+      nullable: true
+    target_type:
+      type: number
+      description: the type of target for this voice channel invite
+      nullable: true
+      externalDocs:
+        url: https://canary.discord.com/developers/docs/resources/invite#invite-object-invite-target-types
+    target_user:
+      allOf:
+        - $ref: "./index.yaml/#/User"
+      description: the user whose stream to display for this voice channel stream invite
+      nullable: true
+    target_application:
+      allOf:
+        - $ref: "./index.yaml/#/Application"
+      description: the embedded application to open for this voice channel embedded application invite
+      nullable: true
+    approximate_presence_count:
+      type: number
+      description: approximate count of online members, returned from the GET /invites/<code> endpoint when with_counts is true
+      nullable: true
+    approximate_member_count:
+      type: number
+      description: approximate count of total members, returned from the GET /invites/<code> endpoint when with_counts is true
+      nullable: true
+    expires_at:
+      type: string
+      description: the expiration date of this invite, returned from the GET /invites/<code> endpoint when with_expiration is true
+      nullable: true
+    stage_instance:
+      allOf:
+        - $ref: "#/InviteStageInstance"
+      description: stage instance data if there is a public Stage instance in the Stage channel this invite is for
+      nullable: true
+      externalDocs:
+        url: https://canary.discord.com/developers/docs/resources/stage-instance
+  externalDocs:
+    url: https://canary.discord.com/developers/docs/resources/invite#invite-object
+
+InviteStageInstance:
+  title: InviteStageInstance
+  type: object
+  description: Invite Stage Instance
+  properties:
+    members:
+      type: array
+      items:
+        allOf:
+          - $ref: "./index.yaml/#/GuildMember"
+      description: the members speaking in the Stage
+      example: []
+    participant_count:
+      type: number
+      description: the number of users in the Stage
+      example: 200
+    speaker_count:
+      type: number
+      description: the number of users speaking in the Stage
+      example: 5
+    topic:
+      type: string
+      description: the topic of the Stage instance (1-120 characters)
+      example: "The debate is over: diet is better than regular"
+  externalDocs:
+    url: https://canary.discord.com/developers/docs/resources/invite#invite-stage-instance-object
+
+InviteMetadata:
+  title: InviteMetadata
+  type: object
+  description: Invite Metadata
+  properties:
+    uses:
+      type: number
+      description: number of times this invite has been used
+      example: 0
+    max_uses:
+      type: number
+      description: max number of times this invite can be used
+      example: 0
+    max_age:
+      type: number
+      description: duration (in seconds) after which the invite expires
+      example: 0
+    temporary:
+      type: boolean
+      description: whether this invite only grants temporary membership
+      example: false
+    created_at:
+      type: string
+      description: when this invite was created
+      example: "2016-03-31T19:15:39.954000+00:00"
+  externalDocs:
+    url: https://canary.discord.com/developers/docs/resources/invite#invite-metadata-object

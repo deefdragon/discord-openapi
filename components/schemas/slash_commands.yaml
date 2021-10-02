@@ -1,0 +1,24 @@
+MessageInteraction:
+  title: MessageInteraction
+  type: object
+  description: This is sent on the message object when the message is a response to an Interaction.
+  properties:
+    id:
+      type: string
+      description: id of the interaction
+    type:
+      type: string # todo: unknown
+      description: the type of interaction
+      externalDocs:
+        url: https://canary.discord.com/developers/docs/interactions/slash-commands#interaction-object-interaction-type
+    name:
+      type: string
+      description: the name of the application command
+      externalDocs:
+        url: https://canary.discord.com/developers/docs/interactions/slash-commands#application-command-object-application-command-structure
+    user:
+      allOf:
+        - $ref: "./index.yaml/#/User"
+      description: the user who invoked the interaction
+  externalDocs:
+    url: https://canary.discord.com/developers/docs/interactions/slash-commands#message-interaction-object
