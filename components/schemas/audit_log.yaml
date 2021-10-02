@@ -1,0 +1,103 @@
+AuditLog:
+  title: AuditLog
+  type: object
+  description: Whenever an admin action is performed on the API, an entry is added to the respective guild's audit log. You can specify the reason by attaching the X-Audit-Log-Reason request header. This header supports url encoded utf8 characters.
+  properties:
+    audit_log_entries:
+      type: array
+      items:
+        $ref: "#/AuditLogEntry"
+      description: list of audit log entries
+    integration:
+      type: array
+      items:
+        allOf:
+          - $ref: "./index.yaml/#/Integration"
+      description: list of partial integration objects
+    threads:
+      type: array
+      items:
+        allOf:
+          - $ref: "./index.yaml/#/Channel"
+      description: list of threads found in the audit log
+    users:
+      type: array
+      items:
+        allOf:
+          - $ref: "./index.yaml/#/User"
+      description: list of users found in the audit log
+    webhooks:
+      type: array
+      items:
+        allOf:
+          - $ref: "./index.yaml/#/Webhook"
+      description: list of webhooks found in the audit log
+  externalDocs:
+    url: https://discord.com/developers/docs/resources/audit-log#audit-logs
+
+AuditLogEntry:
+  title: AuditLogEntry
+  type: object
+  description: Audit Log Entry
+  properties:
+    target_id:
+      type: string
+      description: id of the affected entity (webhook, user, role, etc.)
+      nullable: true
+    changes:
+      type: array
+      items:
+        $ref: "#/AuditLogChange"
+      description: changes made to the target_id
+      nullable: true
+    user_id:
+      type: string
+      description: the user who made the changes
+      nullable: true
+    id:
+      type: string
+      description: id of the entry
+    action_type:
+      type: number
+      description: type of action that occurred
+      externalDocs:
+        url: https://discord.com/developers/docs/resources/audit-log#audit-log-entry-object-audit-log-events
+    options:
+      type: string
+      description: additional info for certain action types
+      nullable: true
+      externalDocs:
+        url: https://discord.com/developers/docs/resources/audit-log#audit-log-entry-object-optional-audit-entry-info
+    reason:
+      type: string
+      description: the reason for the change (0-512 characters)
+      nullable: true
+  externalDocs:
+    url: https://discord.com/developers/docs/resources/audit-log#audit-log-entry-object
+
+AuditLogChange:
+  title: AuditLogChange
+  type: object
+  description: Audit Log Change
+  properties:
+    new_value:
+      # oneOf:
+      # todo: https://discord.com/developers/docs/resources/audit-log#audit-log-change-object-audit-log-change-key
+      description: new value of the key
+      nullable: true
+      externalDocs:
+        url: https://discord.com/developers/docs/resources/audit-log#audit-log-change-object-audit-log-change-key
+    old_value:
+      # oneOf:
+      # todo: https://discord.com/developers/docs/resources/audit-log#audit-log-change-object-audit-log-change-key
+      description: new value of the key
+      nullable: true
+      externalDocs:
+        url: https://discord.com/developers/docs/resources/audit-log#audit-log-change-object-audit-log-change-key
+    key:
+      type: string
+      description: name of audit log change key
+      externalDocs:
+        url: https://discord.com/developers/docs/resources/audit-log#audit-log-change-object-audit-log-change-key
+  externalDocs:
+    url: https://discord.com/developers/docs/resources/audit-log#audit-log-change-object

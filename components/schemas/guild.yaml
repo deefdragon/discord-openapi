@@ -1,0 +1,512 @@
+Integration:
+  title: Integration
+  type: object
+  description: Integration
+  properties:
+    id:
+      type: string
+      description: integration id
+    name:
+      type: string
+      description: integration name
+    type:
+      type: string
+      description: integration type (twitch, youtube, or discord)
+    enabled:
+      type: boolean
+      description: is this integration enabled
+    syncing:
+      type: boolean
+      description: is this integration syncing
+      nullable: true
+    role_id:
+      type: string
+      description: id that this integration uses for "subscribers"
+      nullable: true
+    enable_emoticons:
+      type: boolean
+      description: whether emoticons should be synced for this integration (twitch only currently)
+      nullable: true
+    expire_behavior:
+      type: number
+      description: the behavior of expiring subscribers
+      nullable: true
+      externalDocs:
+        url: https://discord.com/developers/docs/resources/guild#integration-object-integration-expire-behaviors
+    expire_grace_period:
+      type: number
+      description: the grace period (in days) before expiring subscribers
+      nullable: true
+    user:
+      allOf:
+        - $ref: "./index.yaml/#/User"
+      description: user for this integration
+      nullable: true
+    account:
+      allOf:
+        - $ref: "#/IntegrationAccount"
+      description: integration account information
+    synced_at:
+      type: string
+      description: when this integration was last synced
+      nullable: true
+    subscriber_count:
+      type: number
+      description: how many subscribers this integration has
+      nullable: true
+    revoked:
+      type: boolean
+      description: has this integration been revoked
+      nullable: true
+    application:
+      allOf:
+        - $ref: "#/IntegrationApplication"
+      description: The bot/OAuth2 application for discord integrations
+      nullable: true
+  externalDocs:
+    url: https://discord.com/developers/docs/resources/guild#integration-object
+
+IntegrationAccount:
+  title: IntegrationAccount
+  type: object
+  description: Integration Account
+  properties:
+    id:
+      type: string
+      description: id of the account
+    name:
+      type: string
+      description: name of the account
+      example:
+  externalDocs:
+    url: https://discord.com/developers/docs/resources/guild#integration-account-object
+
+IntegrationApplication:
+  title: IntegrationApplication
+  type: object
+  description: Integration Application
+  properties:
+    id:
+      type: string
+      description: the id of the app
+    name:
+      type: string
+      description: the name of the app
+    icon:
+      type: string
+      description: the icon hash of the app
+      nullable: true
+      externalDocs:
+        url: https://discord.com/developers/docs/reference#image-formatting
+    description:
+      type: string
+      description: the description of the app
+    summary:
+      type: string
+      description: the summary of the app
+    bot:
+      allOf:
+        - $ref: "./index.yaml/#/User"
+      description: the bot associated with this application
+      nullable: true
+  externalDocs:
+    url: https://discord.com/developers/docs/resources/guild#integration-application-object
+
+Guild:
+  title: Guild
+  type: object
+  description: Guild
+  properties:
+    id:
+      type: string
+      description: guild id
+    name:
+      type: string
+      description: guild name (2-100 characters, excluding trailing and leading whitespace)
+    icon:
+      type: string
+      description: icon hash
+      nullable: true
+      externalDocs:
+        url: https://discord.com/developers/docs/reference#image-formatting
+    icon_hash:
+      type: string
+      description: icon hash, returned when in the template object
+      nullable: true
+      externalDocs:
+        url: https://discord.com/developers/docs/reference#image-formatting
+    splash:
+      type: string
+      description: splash hash
+      nullable: true
+      externalDocs:
+        url: https://discord.com/developers/docs/reference#image-formatting
+    discovery_splash:
+      type: string
+      description: discovery splash hash; only present for guilds with the "DISCOVERABLE" feature
+      nullable: true
+      externalDocs:
+        url: https://discord.com/developers/docs/reference#image-formatting
+    owner:
+      type: boolean
+      description: true if the user is the owner of the guild
+      nullable: true
+      externalDocs:
+        url: https://discord.com/developers/docs/resources/user#get-current-user-guilds
+    owner_id:
+      type: string
+      description: id of owner
+    permissions:
+      type: string
+      description: total permissions for the user in the guild (excludes overwrites)
+      nullable: true
+      externalDocs:
+        url: https://discord.com/developers/docs/resources/user#get-current-user-guilds
+    region:
+      type: string
+      description: voice region id for the guild (deprecated)
+      deprecated: true
+      nullable: true
+      externalDocs:
+        url: https://discord.com/developers/docs/resources/voice#voice-region-object
+    afk_channel_id:
+      type: string
+      description: id of afk channel
+      nullable: true
+    afk_timeout:
+      type: number
+      description: afk timeout in seconds
+    widget_enabled:
+      type: boolean
+      description: true if the server widget is enabled
+      nullable: true
+    widget_channel_id:
+      type: string
+      description: the channel id that the widget will generate an invite to, or null if set to no invite
+      nullable: true
+    verification_level:
+      type: number
+      description: verification level required for the guild
+      externalDocs:
+        url: https://discord.com/developers/docs/resources/guild#guild-object-verification-level
+    default_message_notifications:
+      type: number
+      description: default message notifications level
+      externalDocs:
+        url: https://discord.com/developers/docs/resources/guild#guild-object-default-message-notification-level
+    explicit_content_filter:
+      type: number
+      description: explicit content filter level
+      externalDocs:
+        url: https://discord.com/developers/docs/resources/guild#guild-object-explicit-content-filter-level
+    roles:
+      type: array
+      items:
+        allOf:
+          - $ref: "./index.yaml/#/Role"
+      description: roles in the guild
+    emojis:
+      type: array
+      items:
+        allOf:
+          - $ref: "./index.yaml/#/Emoji"
+      description: custom guild emojis
+    features:
+      type: array
+      items:
+        type: string
+        externalDocs:
+          url: https://discord.com/developers/docs/resources/guild#guild-object-guild-features
+      description: enabled guild features
+      externalDocs:
+        url: https://discord.com/developers/docs/resources/guild#guild-object-guild-features
+    mfa_level:
+      type: number
+      description: required MFA level for the guild
+      externalDocs:
+        url: https://discord.com/developers/docs/resources/guild#guild-object-mfa-level
+    application_id:
+      type: string
+      description: application id of the guild creator if it is bot-created
+      nullable: true
+    system_channel_id:
+      type: string
+      description: the id of the channel where guild notices such as welcome messages and boost events are posted
+      nullable: true
+    system_channel_flags:
+      type: number
+      description: system channel flags
+      externalDocs:
+        url: https://discord.com/developers/docs/resources/guild#guild-object-system-channel-flags
+    rules_channel_id:
+      type: string
+      description: the id of the channel where Community guilds can display rules and/or guidelines
+      nullable: true
+    joined_at:
+      type: string
+      description: when this guild was joined at
+      nullable: true
+    large:
+      type: boolean
+      description: true if this is considered a large guild
+      nullable: true
+    unavailable:
+      type: boolean
+      description: true if this guild is unavailable due to an outage
+      nullable: true
+    member_count:
+      type: number
+      description: total number of members in this guild
+      nullable: true
+    voice_states:
+      type: array
+      items:
+        allOf:
+          - $ref: "./index.yaml/#/VoiceState"
+      description: states of members currently in voice channels; lacks the guild_id key
+      nullable: true
+    members:
+      type: array
+      items:
+        allOf:
+          - $ref: "#/GuildMember"
+      description: users in the guild
+      nullable: true
+    channels:
+      type: array
+      items:
+        allOf:
+          - $ref: "./index.yaml/#/Channel"
+      description: channels in the guild
+      nullable: true
+    threads:
+      type: array
+      items:
+        allOf:
+          - $ref: "./index.yaml/#/Channel"
+      description: all active threads in the guild that current user has permission to view
+      nullable: true
+    presences:
+      type: array
+      items:
+        allOf:
+          - $ref: "./index.yaml/#/PresenceUpdate"
+      description: presences of the members in the guild, will only include non-offline members if the size is greater than large threshold
+      nullable: true
+    max_presences:
+      type: number
+      description: the maximum number of presences for the guild (null is always returned, apart from the largest of guilds)
+      nullable: true
+    max_numbers:
+      type: number
+      description: the maximum number of members for the guild
+      nullable: true
+    vanity_url_code:
+      type: string
+      description: the vanity url code for the guild
+      nullable: true
+    description:
+      type: string
+      description: the description of a Community guild
+      nullable: true
+    banner:
+      type: string
+      description: banner hash
+      nullable: true
+      externalDocs:
+        url: https://discord.com/developers/docs/reference#image-formatting
+    premium_tier:
+      type: number
+      description: premium tier (Server Boost level)
+      externalDocs:
+        url: https://discord.com/developers/docs/resources/guild#guild-object-premium-tier
+    premium_subscription_count:
+      type: number
+      description: the number of boosts this guild currently has
+      nullable: true
+    preferred_locale:
+      type: string
+      description: the preferred locale of a Community guild; used in server discovery and notices from Discord; defaults to "en-US"
+    public_updates_channel_id:
+      type: string
+      description: the id of the channel where admins and moderators of Community guilds receive notices from Discord
+      nullable: true
+    max_video_channel_users:
+      type: number
+      description: the maximum amount of users in a video channel
+      nullable: true
+    approximate_member_count:
+      type: number
+      description: approximate number of members in this guild, returned from the GET /guilds/<id> endpoint when with_counts is true
+      nullable: true
+    approximate_presence_count:
+      type: number
+      description: approximate number of non-offline members in this guild, returned from the GET /guilds/<id> endpoint when with_counts is true
+      nullable: true
+    welcome_screen:
+      allOf:
+        - $ref: "#/WelcomeScreen"
+      description: the welcome screen of a Community guild, shown to new members, returned in an Invite's guild object
+      nullable: true
+      externalDocs:
+        url: https://discord.com/developers/docs/resources/invite#invite-object
+    nsfw_level:
+      type: number
+      description: guild NSFW level
+      externalDocs:
+        url: https://discord.com/developers/docs/resources/guild#guild-object-guild-nsfw-level
+    stage_instances:
+      type: array
+      items:
+        allOf:
+          - $ref: "./index.yaml/#/StageInstance"
+      description: Stage instances in the guild
+      nullable: true
+    stickers:
+      type: array
+      items:
+        allOf:
+          - $ref: "./index.yaml/#/Sticker"
+      description: custom guild stickers
+      nullable: true
+  externalDocs:
+    url: https://discord.com/developers/docs/resources/guild#guild-object
+
+WelcomeScreen:
+  title: WelcomeScreen
+  type: object
+  description: Welcome Screen
+  properties:
+    description:
+      type: string
+      description: the server description shown in the welcome screen
+      nullable: true
+      example: "Discord Developers is a place to learn about Discord's API, bots, and SDKs and integrations. This is NOT a general Discord support server."
+    welcome_channels:
+      type: array
+      items:
+        allOf:
+          - $ref: "#/WelcomeScreenChannel"
+      description: the channels shown in the welcome screen, up to 5
+      example:
+        [
+          {
+            "channel_id": "697138785317814292",
+            "description": "Follow for official Discord API updates",
+            "emoji_id": null,
+            "emoji_name": "📡",
+          },
+          {
+            "channel_id": "697236247739105340",
+            "description": "Get help with Bot Verifications",
+            "emoji_id": null,
+            "emoji_name": "📸",
+          },
+          {
+            "channel_id": "697489244649816084",
+            "description": "Create amazing things with Discord's API",
+            "emoji_id": null,
+            "emoji_name": "🔬",
+          },
+          {
+            "channel_id": "613425918748131338",
+            "description": "Integrate Discord into your game",
+            "emoji_id": null,
+            "emoji_name": "🎮",
+          },
+          {
+            "channel_id": "646517734150242346",
+            "description": "Find more places to help you on your quest",
+            "emoji_id": null,
+            "emoji_name": "🔦",
+          },
+        ]
+  externalDocs:
+    url: https://discord.com/developers/docs/resources/guild#welcome-screen-object
+
+WelcomeScreenChannel:
+  title: WelcomeScreenChannel
+  type: object
+  description: Welcome Screen Channel
+  properties:
+    channel_id:
+      type: string
+      description: the channel's id
+    description:
+      type: string
+      description: the description shown for the channel
+    emoji_id:
+      type: string
+      description: the emoji id, if the emoji is custom
+      nullable: true
+      externalDocs:
+        url: https://discord.com/developers/docs/reference#image-formatting
+    emoji_name:
+      type: string
+      description: the emoji name if custom, the unicode character if standard, or null if no emoji is set
+      nullable: true
+  externalDocs:
+    url: https://discord.com/developers/docs/resources/guild#welcome-screen-object-welcome-screen-channel-structure
+
+GuildMember:
+  title: GuildMember
+  type: object
+  description: Guild Member
+  properties:
+    user:
+      allOf:
+        - $ref: "./index.yaml/#/User"
+      description: the user this guild member represents
+      nullable: true
+      example: {}
+    nick:
+      type: string
+      description: this users guild nickname
+      example: "NOT API SUPPORT"
+      nullable: true
+    avatar:
+      type: string
+      description: the member's guild avatar hash
+      example: null
+      nullable: true
+      externalDocs:
+        url: https://discord.com/developers/docs/reference#image-formatting
+    roles:
+      type: array
+      items:
+        type: string
+      description: array of role object ids
+      example: []
+    joined_at:
+      type: string
+      description: when the user joined the guild
+      example: "2015-04-26T06:26:56.936000+00:00"
+    premium_since:
+      type: string
+      description: when the user started boosting the guild
+      example: null
+      nullable: true
+      externalDocs:
+        url: https://support.discord.com/hc/en-us/articles/360028038352-Server-Boosting-
+    deaf:
+      type: boolean
+      description: whether the user is deafened in voice channels
+      example: false
+    mute:
+      type: boolean
+      description: whether the user is muted in voice channels
+      example: false
+    pending:
+      type: boolean
+      description: whether the user has not yet passed the guild's Membership Screening requirements*
+      nullable: true
+      example: null
+      externalDocs:
+        url: https://discord.com/developers/docs/resources/guild#membership-screening-object
+    permissions:
+      type: string
+      description: total permissions of the member in the channel, including overwrites, returned when in the interaction object
+      example: null
+      nullable: true
+  externalDocs:
+    url: https://discord.com/developers/docs/resources/guild#guild-member-object

@@ -1,0 +1,241 @@
+PresenceUpdate:
+  title: PresenceUpdate
+  type: object
+  description: Presence Update Event Fields
+  properties:
+    user:
+      allOf:
+        - $ref: "./index.yaml/#/User"
+      description: the user presence is being updated for
+    guild_id:
+      type: string
+      description: id of the guild
+    status:
+      type: string
+      description: either "idle", "dnd", "online", or "offline"
+    activities:
+      type: array
+      items:
+        allOf:
+          - $ref: "#/Activity"
+      description: user's current activities
+    client_status:
+      allOf:
+        - $ref: "#/ClientStatus"
+      description: user's platform-dependent status
+  externalDocs:
+    url: https://discord.com/developers/docs/topics/gateway#presence-update
+
+Activity:
+  title: Activity
+  type: object
+  description: Activity
+  properties:
+    name:
+      type: string
+      description: the activity's name
+      example: "Twitch"
+    type:
+      type: number
+      description: activity type
+      externalDocs:
+        url: https://discord.com/developers/docs/topics/gateway#activity-object-activity-types
+      example: 1
+    url:
+      type: string
+      description: stream url, is validated when type is 1
+      nullable: true
+      example: "https://www.twitch.tv/discord"
+    created_at:
+      type: number
+      description: unix timestamp (in milliseconds) of when the activity was added to the user's session
+    timestamps:
+      allOf:
+        - $ref: "#/ActivityTimestamps"
+      description: unix timestamps for start and/or end of the game
+      nullable: true
+    application_id:
+      type: string
+      description: application id for the game
+      nullable: true
+    details:
+      type: string
+      description: what the player is currently doing
+      nullable: true
+      example: "24H RL Stream for Charity"
+    state:
+      type: string
+      description: the user's current party status
+      nullable: true
+      example: "Rocket League"
+    emoji:
+      allOf:
+        - $ref: "#/ActivityEmoji"
+      description: the emoji used for a custom status
+      nullable: true
+    party:
+      allOf:
+        - $ref: "#/ActivityParty"
+      description: information for the current party of the player
+      nullable: true
+    assets:
+      allOf:
+        - $ref: "#/ActivityAssets"
+      description: images for the presence and their hover texts
+      nullable: true
+    secrets:
+      allOf:
+        - $ref: "#/ActivitySecrets"
+      description: secrets for Rich Presence joining and spectating
+      nullable: true
+    instance:
+      type: boolean
+      description: whether or not the activity is an instanced game session
+      nullable: true
+    flags:
+      type: number
+      description: activity flags ORd together, describes what the payload includes
+      nullable: true
+      externalDocs:
+        url: https://discord.com/developers/docs/topics/gateway#activity-object-activity-flags
+    buttons:
+      type: array
+      items:
+        allOf:
+          - $ref: "#/ActivityButtons"
+      description: the custom buttons shown in the Rich Presence (max 2)
+      nullable: true
+  externalDocs:
+    url: https://discord.com/developers/docs/topics/gateway#activity-object
+
+ActivityEmoji:
+  title: ActivityEmoji
+  type: object
+  description: Activity Emoji
+  properties:
+    name:
+      type: string
+      description: the name of the emoji
+    id:
+      type: string
+      description: the id of the emoji
+      nullable: true
+    animated:
+      type: boolean
+      description: whether this emoji is animated
+      nullable: true
+  externalDocs:
+    url: https://discord.com/developers/docs/topics/gateway#activity-object-activity-emoji
+
+ActivityParty:
+  title: ActivityParty
+  type: object
+  description: Activity Party
+  properties:
+    id:
+      type: string
+      description: the id of the party
+      nullable: true
+    size:
+      type: array
+      items:
+        type: number
+      maxItems: 2
+      description: used to show the party's current and maximum size
+      nullable: true
+  externalDocs:
+    url: https://discord.com/developers/docs/topics/gateway#activity-object-activity-party
+
+ActivityAssets:
+  title: ActivityAssets
+  type: object
+  description: Activity Assets
+  properties:
+    large_image:
+      type: string
+      description: the id for a large asset of the activity, usually a snowflake
+      nullable: true
+    large_text:
+      type: string
+      description: text displayed when hovering over the large image of the activity
+      nullable: true
+    small_image:
+      type: string
+      description: the id for a small asset of the activity, usually a snowflake
+      nullable: true
+    small_text:
+      type: string
+      description: text displayed when hovering over the small image of the activity
+      nullable: true
+  externalDocs:
+    url: https://discord.com/developers/docs/topics/gateway#activity-object-activity-assets
+
+ActivitySecrets:
+  title: ActivitySecrets
+  type: object
+  description: Activity Secrets
+  properties:
+    join:
+      type: string
+      description: the secret for joining a party
+      nullable: true
+    spectate:
+      type: string
+      description: the secret for spectating a game
+      nullable: true
+    match:
+      type: string
+      description: the secret for a specific instanced match
+      nullable: true
+  externalDocs:
+    url: https://discord.com/developers/docs/topics/gateway#activity-object-activity-secrets
+
+ActivityButtons:
+  title: ActivityButtons
+  type: object
+  description: "When received over the gateway, the buttons field is an array of strings, which are the button labels. Bots cannot access a user's activity button URLs. When sending, the buttons field must be an array of the below object:"
+  properties:
+    label:
+      type: string
+      description: the text shown on the button (1-32 characters)
+    url:
+      type: string
+      description: the url opened when clicking the button (1-512 characters)
+  externalDocs:
+    url: https://discord.com/developers/docs/topics/gateway#activity-object-activity-buttons
+
+ActivityTimestamps:
+  title: ActivityTimestamps
+  type: object
+  description: Activity Timestamps
+  properties:
+    start:
+      type: number
+      description: unix time (in milliseconds) of when the activity started
+      nullable: true
+    end:
+      type: number
+      description: unix time (in milliseconds) of when the activity ends
+      nullable: true
+  externalDocs:
+    url: https://discord.com/developers/docs/topics/gateway#activity-object-activity-timestamps
+
+ClientStatus:
+  title: ClientStatus
+  type: object
+  description: Active sessions are indicated with an "online", "idle", or "dnd" string per platform. If a user is offline or invisible, the corresponding field is not present.
+  properties:
+    desktop:
+      type: string
+      description: the user's status set for an active desktop (Windows, Linux, Mac) application session
+      nullable: true
+    mobile:
+      type: string
+      description: the user's status set for an active mobile (iOS, Android) application session
+      nullable: true
+    web:
+      type: string
+      description: the user's status set for an active web (browser, bot account) application session
+      nullable: true
+  externalDocs:
+    url: https://discord.com/developers/docs/topics/gateway#client-status-object

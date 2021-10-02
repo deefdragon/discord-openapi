@@ -1,0 +1,27 @@
+StageInstance:
+  title: StageInstance
+  type: object
+  description: Stage Instance
+  properties:
+    id:
+      type: string
+      description: The id of this Stage instance
+    guild_id:
+      type: string
+      description: The guild id of the associated Stage channel
+    channel_id:
+      type: string
+      description: The id of the associated Stage channel
+    topic:
+      type: string
+      description: The topic of the Stage instance (1-120 characters)
+    privacy_level:
+      type: number
+      description: The privacy level of the Stage instance
+      externalDocs:
+        url: https://discord.com/developers/docs/resources/stage-instance#stage-instance-object-privacy-level
+    discoverable_disabled:
+      type: boolean
+      description: Whether or not Stage Discovery is disabled
+  externalDocs:
+    url: https://discord.com/developers/docs/resources/stage-instance#stage-instance-object

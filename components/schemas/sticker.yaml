@@ -1,0 +1,57 @@
+Sticker:
+  title: Sticker
+  type: object
+  description: Represents a sticker that can be sent in messages.
+  properties:
+    id:
+      type: string
+      description: id of the sticker
+      externalDocs:
+        url: https://discord.com/developers/docs/reference#image-formatting
+    pack_id:
+      type: string
+      description: for standard stickers, id of the pack the sticker is from
+      nullable: true
+    name:
+      type: string
+      description: name of the sticker
+    description:
+      type: string
+      description: description of the sticker
+      nullable: true
+    tags:
+      type: string
+      description: autocomplete/suggestion tags for the sticker (max 200 characters)
+    asset:
+      type: string
+      description: Deprecated previously the sticker asset hash, now an empty string
+      deprecated: true
+    type:
+      type: number
+      description: type of sticker
+      externalDocs:
+        url: https://discord.com/developers/docs/resources/sticker#sticker-object-sticker-types
+    format_type:
+      type: number
+      description: type of sticker format
+      externalDocs:
+        url: https://discord.com/developers/docs/resources/sticker#sticker-object-sticker-format-types
+    available:
+      type: boolean
+      description: whether this guild sticker can be used, may be false due to loss of Server Boosts
+      nullable: true
+    guild_id:
+      type: string
+      description: id of the guild that owns this sticker
+      nullable: true
+    user:
+      allOf:
+        - $ref: "./index.yaml/#/User"
+      description: the user that uploaded the guild sticker
+      nullable: true
+    sort_value:
+      type: number
+      description: the standard sticker's sort order within its pack
+      nullable: true
+  externalDocs:
+    url: https://discord.com/developers/docs/resources/sticker#sticker-object

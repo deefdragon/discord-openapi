@@ -20,9 +20,8 @@ externalDocs:
   url: https://discord.com/developers/docs/intro
   description: Discord Developer Documentation
 paths:
-  /:
-    # todo
-    $ref: "./paths/index.yaml"
+  /guilds/:guildId/audit-logs:
+    $ref: "./paths/audit_log.yaml/#/GetGuildAuditLog"
 components:
   callbacks:
     $ref: "./components/callbacks/index.yaml"

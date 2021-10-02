@@ -24,3 +24,28 @@ Team:
       description: the user id of the current team owner
   externalDocs:
     url: https://discord.com/developers/docs/topics/teams#data-models-team-object
+
+TeamMembers:
+  title: TeamMembers
+  type: object
+  description: Team Members
+  properties:
+    membership_state:
+      type: number
+      description: the user's membership state on the team
+      externalDocs:
+        url: https://discord.com/developers/docs/topics/teams#data-models-membership-state-enum
+    permissions:
+      type: array
+      items:
+        type: string
+      description: will always be `["*"]`
+    team_id:
+      type: string
+      description: the id of the parent team of which they are a member
+    user:
+      allOf:
+        - $ref: "./index.yaml/#/User"
+      description: the avatar, discriminator, id, and username of the user
+  externalDocs:
+    url: https://discord.com/developers/docs/topics/teams#data-models-team-members-object

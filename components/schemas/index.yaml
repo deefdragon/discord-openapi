@@ -5,4 +5,64 @@ User:
 Team:
   $ref: "./team.yaml/#/Team"
 TeamMembers:
-  $ref: "./team_members.yaml/#/TeamMembers"
+  $ref: "./team.yaml/#/TeamMembers"
+AuditLog:
+  $ref: "./audit_log.yaml/#/AuditLog"
+AuditLogEntry:
+  $ref: "./audit_log.yaml/#/AuditLogEntry"
+AuditLogChange:
+  $ref: "./audit_log.yaml/#/AuditLogChange"
+Channel:
+  $ref: "./channel.yaml/#/Channel"
+ThreadMember:
+  $ref: "./channel.yaml/#/ThreadMember"
+ThreadMetadata:
+  $ref: "./channel.yaml/#/ThreadMetadata"
+Overwrite:
+  $ref: "./channel.yaml/#/Overwrite"
+Emoji:
+  $ref: "./emoji.yaml/#/Emoji"
+PresenceUpdate:
+  $ref: "./gateway.yaml/#/PresenceUpdate"
+Activity:
+  $ref: "./gateway.yaml/#/Activity"
+ActivityEmoji:
+  $ref: "./gateway.yaml/#/ActivityEmoji"
+ActivityParty:
+  $ref: "./gateway.yaml/#/ActivityParty"
+ActivityAssets:
+  $ref: "./gateway.yaml/#/ActivityAssets"
+ActivitySecrets:
+  $ref: "./gateway.yaml/#/ActivitySecrets"
+ActivityButtons:
+  $ref: "./gateway.yaml/#/ActivityButtons"
+ActivityTimestamps:
+  $ref: "./gateway.yaml/#/ActivityTimestamps"
+ClientStatus:
+  $ref: "./gateway.yaml/#/ClientStatus"
+Integration:
+  $ref: "./guild.yaml/#/Integration"
+IntegrationAccount:
+  $ref: "./guild.yaml/#/IntegrationAccount"
+IntegrationApplication:
+  $ref: "./guild.yaml/#/IntegrationApplication"
+Guild:
+  $ref: "./guild.yaml/#/Guild"
+WelcomeScreen:
+  $ref: "./guild.yaml/#/WelcomeScreen"
+WelcomeScreenChannel:
+  $ref: "./guild.yaml/#/WelcomeScreenChannel"
+GuildMember:
+  $ref: "./guild.yaml/#/GuildMember"
+Role:
+  $ref: "./permissions.yaml/#/Role"
+RoleTags:
+  $ref: "./permissions.yaml/#/RoleTags"
+StageInstance:
+  $ref: "./stage_instance.yaml/#/StageInstance"
+Sticker:
+  $ref: "./sticker.yaml/#/Sticker"
+VoiceState:
+  $ref: "./voice.yaml/#/VoiceState"
+Webhook:
+  $ref: "./webhook.yaml/#/Webhook"
