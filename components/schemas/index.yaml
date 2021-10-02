@@ -116,3 +116,5 @@ Ban:
   $ref: "./guild.yaml/#/Ban"
 GuildTemplate:
   $ref: "./guild_template.yaml/#/GuildTemplate"
+VoiceRegion:
+  $ref: "./voice.yaml/#/VoiceRegion"
