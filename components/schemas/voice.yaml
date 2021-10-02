@@ -63,3 +63,29 @@ VoiceState:
       example: "2021-03-31T18:45:31.297561+00:00"
   externalDocs:
     url: https://discord.com/developers/docs/resources/voice#voice-state-object
+
+VoiceRegion:
+  title: VoiceRegion
+  type: object
+  description: Voice Region
+  properties:
+    id:
+      type: string
+      description: unique ID for the region
+    name:
+      type: string
+      description: name of the region
+    vip:
+      type: boolean
+      description: true if this is a vip-only server
+    optimal:
+      type: boolean
+      description: true for a single server that is closest to the current user's client
+    deprecated:
+      type: boolean
+      description: whether this is a deprecated voice region (avoid switching to these)
+    custom:
+      type: boolean
+      description: whether this is a custom voice region (used for events/etc)
+  externalDocs:
+    url: https://canary.discord.com/developers/docs/resources/voice#voice-region-object

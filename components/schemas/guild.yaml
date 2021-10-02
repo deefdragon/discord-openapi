@@ -510,3 +510,114 @@ GuildMember:
       nullable: true
   externalDocs:
     url: https://discord.com/developers/docs/resources/guild#guild-member-object
+
+GuildPreview:
+  title: GuildPreview
+  type: object
+  description: Guild Preview
+  properties:
+    id:
+      type: string
+      description: guild id
+      example: "197038439483310086"
+    name:
+      type: string
+      description: guild name (2-100 characters)
+      example: "Discord Testers"
+    icon:
+      type: string
+      description: icon hash
+      example: "f64c482b807da4f539cff778d174971c"
+      nullable: true
+    splash:
+      type: string
+      description: splash hash
+      example: null
+      nullable: true
+    discovery_splash:
+      type: string
+      description: discovery splash hash
+      example: null
+      nullable: true
+    emojis:
+      type: array
+      items:
+        allOf:
+          - $ref: "./index.yaml/#/Emoji"
+      description: custom guild emojis
+      example: []
+    features:
+      type: array
+      items:
+        type: string
+        externalDocs:
+          url: https://canary.discord.com/developers/docs/resources/guild#guild-object-guild-features
+      description: enabled guild features
+      example:
+        [
+          "DISCOVERABLE",
+          "VANITY_URL",
+          "ANIMATED_ICON",
+          "INVITE_SPLASH",
+          "NEWS",
+          "COMMUNITY",
+          "BANNER",
+          "VERIFIED",
+          "MORE_EMOJI",
+        ]
+    approximate_member_count:
+      type: number
+      description: approximate number of members in this guild
+      example: 60814
+    approximate_presence_count:
+      type: number
+      description: approximate number of online members in this guild
+      example: 20034
+    description:
+      type: string
+      description: the description for the guild, if the guild is discoverable
+      example: "The official place to report Discord Bugs!"
+      nullable: true
+  externalDocs:
+    url: https://canary.discord.com/developers/docs/resources/guild#guild-preview-object
+
+GuildWidget:
+  title: GuildWidget
+  type: object
+  description: Guild Widget
+  properties:
+    enabled:
+      type: boolean
+      description: whether the widget is enabled
+      example: true
+    channel_id:
+      type: string
+      description: the widget channel id
+      example: "41771983444115456"
+  externalDocs:
+    url: https://canary.discord.com/developers/docs/resources/guild#guild-preview-object
+
+Ban:
+  title: Ban
+  type: object
+  description: Ban
+  properties:
+    reason:
+      type: string
+      description: the reason for the ban
+      nullable: true
+      example: "mentioning b1nzy"
+    user:
+      allOf:
+        - $ref: "./index.yaml/#/User"
+      description: the banned user
+      example:
+        {
+          "username": "Mason",
+          "discriminator": "9999",
+          "id": "53908099506183680",
+          "avatar": "a_bab14f271d565501444b2ca3be944b25",
+          "public_flags": 131141,
+        }
+  externalDocs:
+    url: https://canary.discord.com/developers/docs/resources/guild#ban-object
