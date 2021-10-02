@@ -1,0 +1,53 @@
+GuildTemplate:
+  title: GuildTemplate
+  type: object
+  description: Represents a code that when used, creates a guild based on a snapshot of an existing guild.
+  properties:
+    code:
+      type: string
+      description: the template code (unique ID)
+      example: "hgM48av5Q69A"
+    name:
+      type: string
+      description: template name
+      example: "Friends & Family"
+    description:
+      type: string
+      description: the description for the template
+      example: ""
+      nullable: true
+    usage_count:
+      type: number
+      description: number of times this template has been used
+      example: 49605
+    creator_id:
+      type: string
+      description: the ID of the user who created the template
+      example: "132837293881950208"
+    user:
+      allOf:
+        - $ref: "./index.yaml/#/User"
+      description: the user who created the template
+    created_at:
+      type: string
+      description: when this template was created
+      example: "2020-04-02T21:10:38+00:00"
+    updated_at:
+      type: string
+      description: when this template was last synced to the source guild
+      example: "2020-05-01T17:57:38+00:00"
+    source_guild_id:
+      type: string
+      description: the ID of the guild this template is based on
+      example: "678070694164299796"
+    serialized_source_guild:
+      allOf:
+        - $ref: "./index.yaml/#/Guild"
+      description: the guild snapshot this template contains
+    is_dirty:
+      type: boolean
+      description: whether the template has unsynced changes
+      example: null
+      nullable: true
+  externalDocs:
+    url: https://canary.discord.com/developers/docs/resources/guild-template#guild-template-object

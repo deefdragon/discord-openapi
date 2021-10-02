@@ -114,3 +114,5 @@ GuildWidget:
   $ref: "./guild.yaml/#/GuildWidget"
 Ban:
   $ref: "./guild.yaml/#/Ban"
+GuildTemplate:
+  $ref: "./guild_template.yaml/#/GuildTemplate"
