@@ -1,0 +1,91 @@
+Component:
+  title: Component
+  type: object
+  description: Component
+  properties:
+    type:
+      type: number
+      description: component type
+      externalDocs:
+        url: https://canary.discord.com/developers/docs/interactions/message-components#component-object-component-types
+    custom_id:
+      type: string
+      description: a developer-defined identifier for the component, max 100 characters
+      nullable: true
+    disabled:
+      type: boolean
+      description: whether the component is disabled, default false
+      nullable: true
+    style:
+      type: number
+      description: one of button styles
+      nullable: true
+      externalDocs:
+        url: https://canary.discord.com/developers/docs/interactions/message-components#button-object-button-styles
+    label:
+      type: string
+      description: text that appears on the button, max 80 characters
+      nullable: true
+    emoji:
+      allOf:
+        - $ref: "./index.yaml/#/Emoji"
+      description: name, id, and animated
+      nullable: true
+    url:
+      type: string
+      description: a url for link-style buttons
+      nullable: true
+    options:
+      type: array
+      items:
+        allOf:
+          - $ref: "#/SelectOption"
+      description: the choices in the select, max 25
+    placeholder:
+      type: string
+      description: custom placeholder text if nothing is selected, max 100 characters
+      nullable: true
+    min_values:
+      type: number
+      description: the minimum number of items that must be chosen; default 1, min 0, max 25
+      nullable: true
+    max_values:
+      type: number
+      description: the maximum number of items that can be chosen; default 1, max 25
+      nullable: true
+    components:
+      type: array
+      items:
+        allOf:
+          - $ref: "#/Component"
+      description: a list of child components
+      nullable: true
+  externalDocs:
+    url: https://canary.discord.com/developers/docs/interactions/message-components#component-object
+
+SelectOption:
+  title: SelectOption
+  type: object
+  description: Select Option
+  properties:
+    label:
+      type: string
+      description: the user-facing name of the option, max 25 characters
+    value:
+      type: string
+      description: the dev-define value of the option, max 100 characters
+    description:
+      type: string
+      description: an additional description of the option, max 50 characters
+      nullable: true
+    emoji:
+      allOf:
+        - $ref: "./index.yaml/#/Emoji"
+      description: id, name, and animated
+      nullable: true
+    default:
+      type: boolean
+      description: will render this option as selected by default
+      nullable: true
+  externalDocs:
+    url: https://canary.discord.com/developers/docs/interactions/message-components#select-menu-object-select-option-structure
