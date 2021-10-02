@@ -1,0 +1,46 @@
+GetGuildAuditLog:
+  get:
+    operationId: getGuildAuditLogs
+    externalDocs:
+      url: https://discord.com/developers/docs/resources/audit-log#get-guild-audit-log
+    parameters:
+      - name: guildId
+        in: path
+        required: true
+        description: Guild ID
+        schema:
+          type: string
+      - name: user_id
+        in: query
+        required: true
+        description: filter the log for actions made by a user
+        schema:
+          type: string
+      - name: action_type
+        in: query
+        required: true
+        description: the type of audit log event
+        schema:
+          type: number
+          externalDocs:
+            url: https://discord.com/developers/docs/resources/audit-log#audit-log-entry-object-audit-log-events
+      - name: before
+        in: query
+        required: true
+        description: filter the log before a certain entry id
+        schema:
+          type: string
+      - name: limit
+        in: query
+        required: true
+        description: how many entries are returned (default 50, minimum 1, maximum 100)
+        schema:
+          type: number
+    description: Returns an audit log object for the guild. Requires the 'VIEW_AUDIT_LOG' permission.
+    responses:
+      200:
+        description: OK
+        content:
+          application/json:
+            schema:
+              $ref: "../components/schemas/index.yaml/#/AuditLog"
