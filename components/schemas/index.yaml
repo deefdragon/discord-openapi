@@ -108,3 +108,9 @@ InviteStageInstance:
   $ref: "./invite.yaml/#/InviteStageInstance"
 InviteMetadata:
   $ref: "./invite.yaml/#/InviteMetadata"
+GuildPreview:
+  $ref: "./guild.yaml/#/GuildPreview"
+GuildWidget:
+  $ref: "./guild.yaml/#/GuildWidget"
+Ban:
+  $ref: "./guild.yaml/#/Ban"
