@@ -102,3 +102,9 @@ SelectOption:
   $ref: "./message_components.yaml/#/SelectOption"
 MessageStickerItem:
   $ref: "./channel.yaml/#/MessageStickerItem"
+Invite:
+  $ref: "./invite.yaml/#/Invite"
+InviteStageInstance:
+  $ref: "./invite.yaml/#/InviteStageInstance"
+InviteMetadata:
+  $ref: "./invite.yaml/#/InviteMetadata"
