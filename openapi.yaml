@@ -22,6 +22,8 @@ externalDocs:
 paths:
   /guilds/:guildId/audit-logs:
     $ref: "./paths/audit_log.yaml/#/GetGuildAuditLog"
+  /channels/:channelId:
+    $ref: "./paths/channel.yaml/#/Channel"
 components:
   callbacks:
     $ref: "./components/callbacks/index.yaml"

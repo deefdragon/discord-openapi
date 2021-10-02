@@ -1,0 +1,5 @@
+ModifyChannelGroupDM:
+  title: ModifyChannelGroupDM
+  type: object
+  description: ModifyChannelGroupDM
+  properties:

@@ -1,0 +1,32 @@
+Channel:
+  get:
+    operationId: getChannel
+    externalDocs:
+      url: https://canary.discord.com/developers/docs/resources/channel#get-channel
+    parameters:
+      - in: path
+        name: channelId
+        description: Channel ID
+        schema:
+          type: string
+        required: true
+    description: Get a channel by ID. Returns a channel object. If the channel is a thread, a thread member object is included in the returned result.
+    responses:
+      200:
+        description: OK
+        content:
+          application/json:
+            schema:
+              $ref: "../components/schemas/Channel"
+  patch:
+    operationId: modifyChannel
+    description: Update a channel's settings. Returns a channel on success, and a 400 BAD REQUEST on invalid parameters. All JSON parameters are optional.
+    externalDocs:
+      url: https://canary.discord.com/developers/docs/resources/channel#modify-channel
+    parameters:
+      - in: path
+        name: channelId
+        description: Channel ID
+        schema:
+          type: string
+        required: true
