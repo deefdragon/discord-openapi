@@ -66,3 +66,39 @@ VoiceState:
   $ref: "./voice.yaml/#/VoiceState"
 Webhook:
   $ref: "./webhook.yaml/#/Webhook"
+Message:
+  $ref: "./channel.yaml/#/Message"
+ChannelMention:
+  $ref: "./channel.yaml/#/ChannelMention"
+Attachment:
+  $ref: "./channel.yaml/#/Attachment"
+Embed:
+  $ref: "./channel.yaml/#/Embed"
+EmbedFooter:
+  $ref: "./channel.yaml/#/EmbedFooter"
+EmbedField:
+  $ref: "./channel.yaml/#/EmbedField"
+EmbedAuthor:
+  $ref: "./channel.yaml/#/EmbedAuthor"
+EmbedProvider:
+  $ref: "./channel.yaml/#/EmbedProvider"
+EmbedImage:
+  $ref: "./channel.yaml/#/EmbedImage"
+EmbedVideo:
+  $ref: "./channel.yaml/#/EmbedVideo"
+EmbedThumbnail:
+  $ref: "./channel.yaml/#/EmbedThumbnail"
+Reaction:
+  $ref: "./channel.yaml/#/Reaction"
+MessageActivity:
+  $ref: "./channel.yaml/#/MessageActivity"
+MessageReference:
+  $ref: "./channel.yaml/#/MessageReference"
+MessageInteraction:
+  $ref: "./slash_commands.yaml/#/MessageInteraction"
+Component:
+  $ref: "./message_components.yaml/#/Component"
+SelectOption:
+  $ref: "./message_components.yaml/#/SelectOption"
+MessageStickerItem:
+  $ref: "./channel.yaml/#/MessageStickerItem"
