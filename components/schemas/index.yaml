@@ -1,120 +1,120 @@
 Application:
-  $ref: "./application.yaml/#/Application"
+  $ref: "./application.yaml#/Application"
 User:
-  $ref: "./user.yaml/#/User"
+  $ref: "./user.yaml#/User"
 Team:
-  $ref: "./team.yaml/#/Team"
+  $ref: "./team.yaml#/Team"
 TeamMembers:
-  $ref: "./team.yaml/#/TeamMembers"
+  $ref: "./team.yaml#/TeamMembers"
 AuditLog:
-  $ref: "./audit_log.yaml/#/AuditLog"
+  $ref: "./audit_log.yaml#/AuditLog"
 AuditLogEntry:
-  $ref: "./audit_log.yaml/#/AuditLogEntry"
+  $ref: "./audit_log.yaml#/AuditLogEntry"
 AuditLogChange:
-  $ref: "./audit_log.yaml/#/AuditLogChange"
+  $ref: "./audit_log.yaml#/AuditLogChange"
 Channel:
-  $ref: "./channel.yaml/#/Channel"
+  $ref: "./channel.yaml#/Channel"
 ThreadMember:
-  $ref: "./channel.yaml/#/ThreadMember"
+  $ref: "./channel.yaml#/ThreadMember"
 ThreadMetadata:
-  $ref: "./channel.yaml/#/ThreadMetadata"
+  $ref: "./channel.yaml#/ThreadMetadata"
 Overwrite:
-  $ref: "./channel.yaml/#/Overwrite"
+  $ref: "./channel.yaml#/Overwrite"
 Emoji:
-  $ref: "./emoji.yaml/#/Emoji"
+  $ref: "./emoji.yaml#/Emoji"
 PresenceUpdate:
-  $ref: "./gateway.yaml/#/PresenceUpdate"
+  $ref: "./gateway.yaml#/PresenceUpdate"
 Activity:
-  $ref: "./gateway.yaml/#/Activity"
+  $ref: "./gateway.yaml#/Activity"
 ActivityEmoji:
-  $ref: "./gateway.yaml/#/ActivityEmoji"
+  $ref: "./gateway.yaml#/ActivityEmoji"
 ActivityParty:
-  $ref: "./gateway.yaml/#/ActivityParty"
+  $ref: "./gateway.yaml#/ActivityParty"
 ActivityAssets:
-  $ref: "./gateway.yaml/#/ActivityAssets"
+  $ref: "./gateway.yaml#/ActivityAssets"
 ActivitySecrets:
-  $ref: "./gateway.yaml/#/ActivitySecrets"
+  $ref: "./gateway.yaml#/ActivitySecrets"
 ActivityButtons:
-  $ref: "./gateway.yaml/#/ActivityButtons"
+  $ref: "./gateway.yaml#/ActivityButtons"
 ActivityTimestamps:
-  $ref: "./gateway.yaml/#/ActivityTimestamps"
+  $ref: "./gateway.yaml#/ActivityTimestamps"
 ClientStatus:
-  $ref: "./gateway.yaml/#/ClientStatus"
+  $ref: "./gateway.yaml#/ClientStatus"
 Integration:
-  $ref: "./guild.yaml/#/Integration"
+  $ref: "./guild.yaml#/Integration"
 IntegrationAccount:
-  $ref: "./guild.yaml/#/IntegrationAccount"
+  $ref: "./guild.yaml#/IntegrationAccount"
 IntegrationApplication:
-  $ref: "./guild.yaml/#/IntegrationApplication"
+  $ref: "./guild.yaml#/IntegrationApplication"
 Guild:
-  $ref: "./guild.yaml/#/Guild"
+  $ref: "./guild.yaml#/Guild"
 WelcomeScreen:
-  $ref: "./guild.yaml/#/WelcomeScreen"
+  $ref: "./guild.yaml#/WelcomeScreen"
 WelcomeScreenChannel:
-  $ref: "./guild.yaml/#/WelcomeScreenChannel"
+  $ref: "./guild.yaml#/WelcomeScreenChannel"
 GuildMember:
-  $ref: "./guild.yaml/#/GuildMember"
+  $ref: "./guild.yaml#/GuildMember"
 Role:
-  $ref: "./permissions.yaml/#/Role"
+  $ref: "./permissions.yaml#/Role"
 RoleTags:
-  $ref: "./permissions.yaml/#/RoleTags"
+  $ref: "./permissions.yaml#/RoleTags"
 StageInstance:
-  $ref: "./stage_instance.yaml/#/StageInstance"
+  $ref: "./stage_instance.yaml#/StageInstance"
 Sticker:
-  $ref: "./sticker.yaml/#/Sticker"
+  $ref: "./sticker.yaml#/Sticker"
 VoiceState:
-  $ref: "./voice.yaml/#/VoiceState"
+  $ref: "./voice.yaml#/VoiceState"
 Webhook:
-  $ref: "./webhook.yaml/#/Webhook"
+  $ref: "./webhook.yaml#/Webhook"
 Message:
-  $ref: "./channel.yaml/#/Message"
+  $ref: "./channel.yaml#/Message"
 ChannelMention:
-  $ref: "./channel.yaml/#/ChannelMention"
+  $ref: "./channel.yaml#/ChannelMention"
 Attachment:
-  $ref: "./channel.yaml/#/Attachment"
+  $ref: "./channel.yaml#/Attachment"
 Embed:
-  $ref: "./channel.yaml/#/Embed"
+  $ref: "./channel.yaml#/Embed"
 EmbedFooter:
-  $ref: "./channel.yaml/#/EmbedFooter"
+  $ref: "./channel.yaml#/EmbedFooter"
 EmbedField:
-  $ref: "./channel.yaml/#/EmbedField"
+  $ref: "./channel.yaml#/EmbedField"
 EmbedAuthor:
-  $ref: "./channel.yaml/#/EmbedAuthor"
+  $ref: "./channel.yaml#/EmbedAuthor"
 EmbedProvider:
-  $ref: "./channel.yaml/#/EmbedProvider"
+  $ref: "./channel.yaml#/EmbedProvider"
 EmbedImage:
-  $ref: "./channel.yaml/#/EmbedImage"
+  $ref: "./channel.yaml#/EmbedImage"
 EmbedVideo:
-  $ref: "./channel.yaml/#/EmbedVideo"
+  $ref: "./channel.yaml#/EmbedVideo"
 EmbedThumbnail:
-  $ref: "./channel.yaml/#/EmbedThumbnail"
+  $ref: "./channel.yaml#/EmbedThumbnail"
 Reaction:
-  $ref: "./channel.yaml/#/Reaction"
+  $ref: "./channel.yaml#/Reaction"
 MessageActivity:
-  $ref: "./channel.yaml/#/MessageActivity"
+  $ref: "./channel.yaml#/MessageActivity"
 MessageReference:
-  $ref: "./channel.yaml/#/MessageReference"
+  $ref: "./channel.yaml#/MessageReference"
 MessageInteraction:
-  $ref: "./slash_commands.yaml/#/MessageInteraction"
+  $ref: "./slash_commands.yaml#/MessageInteraction"
 Component:
-  $ref: "./message_components.yaml/#/Component"
+  $ref: "./message_components.yaml#/Component"
 SelectOption:
-  $ref: "./message_components.yaml/#/SelectOption"
+  $ref: "./message_components.yaml#/SelectOption"
 MessageStickerItem:
-  $ref: "./channel.yaml/#/MessageStickerItem"
+  $ref: "./channel.yaml#/MessageStickerItem"
 Invite:
-  $ref: "./invite.yaml/#/Invite"
+  $ref: "./invite.yaml#/Invite"
 InviteStageInstance:
-  $ref: "./invite.yaml/#/InviteStageInstance"
+  $ref: "./invite.yaml#/InviteStageInstance"
 InviteMetadata:
-  $ref: "./invite.yaml/#/InviteMetadata"
+  $ref: "./invite.yaml#/InviteMetadata"
 GuildPreview:
-  $ref: "./guild.yaml/#/GuildPreview"
+  $ref: "./guild.yaml#/GuildPreview"
 GuildWidget:
-  $ref: "./guild.yaml/#/GuildWidget"
+  $ref: "./guild.yaml#/GuildWidget"
 Ban:
-  $ref: "./guild.yaml/#/Ban"
+  $ref: "./guild.yaml#/Ban"
 GuildTemplate:
-  $ref: "./guild_template.yaml/#/GuildTemplate"
+  $ref: "./guild_template.yaml#/GuildTemplate"
 VoiceRegion:
-  $ref: "./voice.yaml/#/VoiceRegion"
+  $ref: "./voice.yaml#/VoiceRegion"

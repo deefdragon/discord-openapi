@@ -8,16 +8,16 @@ Invite:
       description: the invite code (unique ID)
     guild:
       allOf:
-        - $ref: "./index.yaml/#/Guild"
+        - $ref: "./index.yaml#/Guild"
       description: the guild this invite is for
       nullable: true
     channel:
       allOf:
-        - $ref: "./index.yaml/#/Channel"
+        - $ref: "./index.yaml#/Channel"
       description: the channel this invite is for
     inviter:
       allOf:
-        - $ref: "./index.yaml/#/User"
+        - $ref: "./index.yaml#/User"
       description: the user who created the invite
       nullable: true
     target_type:
@@ -28,12 +28,12 @@ Invite:
         url: https://canary.discord.com/developers/docs/resources/invite#invite-object-invite-target-types
     target_user:
       allOf:
-        - $ref: "./index.yaml/#/User"
+        - $ref: "./index.yaml#/User"
       description: the user whose stream to display for this voice channel stream invite
       nullable: true
     target_application:
       allOf:
-        - $ref: "./index.yaml/#/Application"
+        - $ref: "./index.yaml#/Application"
       description: the embedded application to open for this voice channel embedded application invite
       nullable: true
     approximate_presence_count:
@@ -67,7 +67,7 @@ InviteStageInstance:
       type: array
       items:
         allOf:
-          - $ref: "./index.yaml/#/GuildMember"
+          - $ref: "./index.yaml#/GuildMember"
       description: the members speaking in the Stage
       example: []
     participant_count:

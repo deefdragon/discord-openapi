@@ -26,7 +26,7 @@ GuildTemplate:
       example: "132837293881950208"
     user:
       allOf:
-        - $ref: "./index.yaml/#/User"
+        - $ref: "./index.yaml#/User"
       description: the user who created the template
     created_at:
       type: string
@@ -42,7 +42,7 @@ GuildTemplate:
       example: "678070694164299796"
     serialized_source_guild:
       allOf:
-        - $ref: "./index.yaml/#/Guild"
+        - $ref: "./index.yaml#/Guild"
       description: the guild snapshot this template contains
     is_dirty:
       type: boolean

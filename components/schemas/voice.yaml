@@ -20,7 +20,7 @@ VoiceState:
       example: "80351110224678912"
     member:
       allOf:
-        - $ref: "./index.yaml/#/GuildMember"
+        - $ref: "./index.yaml#/GuildMember"
       description: the guild member this voice state is for
       nullable: true
       example: null

@@ -28,7 +28,7 @@ Component:
       nullable: true
     emoji:
       allOf:
-        - $ref: "./index.yaml/#/Emoji"
+        - $ref: "./index.yaml#/Emoji"
       description: name, id, and animated
       nullable: true
     url:
@@ -80,7 +80,7 @@ SelectOption:
       nullable: true
     emoji:
       allOf:
-        - $ref: "./index.yaml/#/Emoji"
+        - $ref: "./index.yaml#/Emoji"
       description: id, name, and animated
       nullable: true
     default:

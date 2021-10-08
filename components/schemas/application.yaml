@@ -51,7 +51,7 @@ Application:
       type: object
       description: partial user object containing info on the owner of the application
       allOf:
-        - $ref: "./index.yaml/#/UserStructure"
+        - $ref: "./index.yaml#/User"
       nullable: true
     summary:
       type: string
@@ -66,7 +66,7 @@ Application:
         url: https://discord.com/developers/docs/game-sdk/applications#getticket
     team:
       allOf:
-        - $ref: "./index.yaml/#/Team"
+        - $ref: "./index.yaml#/Team"
       description: if the application belongs to a team, this will be a list of the members of that team
       nullable: true
     guild_id:

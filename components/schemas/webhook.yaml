@@ -21,7 +21,7 @@ Webhook:
       nullable: true
     user:
       allOf:
-        - $ref: "./index.yaml/#/User"
+        - $ref: "./index.yaml#/User"
       description: the user this webhook was created by (not returned when getting a webhook with its token)
       nullable: true
     name:
@@ -44,12 +44,12 @@ Webhook:
       nullable: true
     source_guild:
       allOf:
-        - $ref: "./index.yaml/#/Guild"
+        - $ref: "./index.yaml#/Guild"
       description: the guild of the channel that this webhook is following (returned for Channel Follower Webhooks)
       nullable: true
     source_channel:
       allOf:
-        - $ref: "./index.yaml/#/Channel"
+        - $ref: "./index.yaml#/Channel"
       description: the channel that this webhook is following (returned for Channel Follower Webhooks)
       nullable: true
     url:

@@ -18,7 +18,7 @@ MessageInteraction:
         url: https://canary.discord.com/developers/docs/interactions/slash-commands#application-command-object-application-command-structure
     user:
       allOf:
-        - $ref: "./index.yaml/#/User"
+        - $ref: "./index.yaml#/User"
       description: the user who invoked the interaction
   externalDocs:
     url: https://canary.discord.com/developers/docs/interactions/slash-commands#message-interaction-object

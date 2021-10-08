@@ -39,7 +39,7 @@ Integration:
       nullable: true
     user:
       allOf:
-        - $ref: "./index.yaml/#/User"
+        - $ref: "./index.yaml#/User"
       description: user for this integration
       nullable: true
     account:
@@ -106,7 +106,7 @@ IntegrationApplication:
       description: the summary of the app
     bot:
       allOf:
-        - $ref: "./index.yaml/#/User"
+        - $ref: "./index.yaml#/User"
       description: the bot associated with this application
       nullable: true
   externalDocs:
@@ -203,13 +203,13 @@ Guild:
       type: array
       items:
         allOf:
-          - $ref: "./index.yaml/#/Role"
+          - $ref: "./index.yaml#/Role"
       description: roles in the guild
     emojis:
       type: array
       items:
         allOf:
-          - $ref: "./index.yaml/#/Emoji"
+          - $ref: "./index.yaml#/Emoji"
       description: custom guild emojis
     features:
       type: array
@@ -262,7 +262,7 @@ Guild:
       type: array
       items:
         allOf:
-          - $ref: "./index.yaml/#/VoiceState"
+          - $ref: "./index.yaml#/VoiceState"
       description: states of members currently in voice channels; lacks the guild_id key
       nullable: true
     members:
@@ -276,21 +276,21 @@ Guild:
       type: array
       items:
         allOf:
-          - $ref: "./index.yaml/#/Channel"
+          - $ref: "./index.yaml#/Channel"
       description: channels in the guild
       nullable: true
     threads:
       type: array
       items:
         allOf:
-          - $ref: "./index.yaml/#/Channel"
+          - $ref: "./index.yaml#/Channel"
       description: all active threads in the guild that current user has permission to view
       nullable: true
     presences:
       type: array
       items:
         allOf:
-          - $ref: "./index.yaml/#/PresenceUpdate"
+          - $ref: "./index.yaml#/PresenceUpdate"
       description: presences of the members in the guild, will only include non-offline members if the size is greater than large threshold
       nullable: true
     max_presences:
@@ -359,14 +359,14 @@ Guild:
       type: array
       items:
         allOf:
-          - $ref: "./index.yaml/#/StageInstance"
+          - $ref: "./index.yaml#/StageInstance"
       description: Stage instances in the guild
       nullable: true
     stickers:
       type: array
       items:
         allOf:
-          - $ref: "./index.yaml/#/Sticker"
+          - $ref: "./index.yaml#/Sticker"
       description: custom guild stickers
       nullable: true
   externalDocs:
@@ -455,7 +455,7 @@ GuildMember:
   properties:
     user:
       allOf:
-        - $ref: "./index.yaml/#/User"
+        - $ref: "./index.yaml#/User"
       description: the user this guild member represents
       nullable: true
       example: {}
@@ -543,7 +543,7 @@ GuildPreview:
       type: array
       items:
         allOf:
-          - $ref: "./index.yaml/#/Emoji"
+          - $ref: "./index.yaml#/Emoji"
       description: custom guild emojis
       example: []
     features:
@@ -609,7 +609,7 @@ Ban:
       example: "mentioning b1nzy"
     user:
       allOf:
-        - $ref: "./index.yaml/#/User"
+        - $ref: "./index.yaml#/User"
       description: the banned user
       example:
         {

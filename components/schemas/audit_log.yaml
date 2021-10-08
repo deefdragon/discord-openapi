@@ -12,25 +12,25 @@ AuditLog:
       type: array
       items:
         allOf:
-          - $ref: "./index.yaml/#/Integration"
+          - $ref: "./index.yaml#/Integration"
       description: list of partial integration objects
     threads:
       type: array
       items:
         allOf:
-          - $ref: "./index.yaml/#/Channel"
+          - $ref: "./index.yaml#/Channel"
       description: list of threads found in the audit log
     users:
       type: array
       items:
         allOf:
-          - $ref: "./index.yaml/#/User"
+          - $ref: "./index.yaml#/User"
       description: list of users found in the audit log
     webhooks:
       type: array
       items:
         allOf:
-          - $ref: "./index.yaml/#/Webhook"
+          - $ref: "./index.yaml#/Webhook"
       description: list of webhooks found in the audit log
   externalDocs:
     url: https://discord.com/developers/docs/resources/audit-log#audit-logs

@@ -43,4 +43,4 @@ GetGuildAuditLog:
         content:
           application/json:
             schema:
-              $ref: "../components/schemas/index.yaml/#/AuditLog"
+              $ref: "../components/schemas/index.yaml#/AuditLog"

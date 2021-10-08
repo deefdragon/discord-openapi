@@ -1,5 +1,4 @@
 Message:
-  title: Message
   type: object
   description: Represents a message sent in a channel within Discord.
   properties:
@@ -15,11 +14,11 @@ Message:
       nullable: true
     author:
       allOf:
-        - $ref: "./index.yaml/#/User"
+        - $ref: "./index.yaml#/User"
       description: the author of this message (not guaranteed to be a valid user, see below)
     member:
       allOf:
-        - $ref: "./index.yaml/#/GuildMember"
+        - $ref: "./index.yaml#/GuildMember"
       description: member properties for this message's author
       nullable: true
     content:
@@ -42,12 +41,11 @@ Message:
       type: array
       items:
         allOf:
-          - $ref: "./index.yaml/#/User"
-        additionalProperties: true
+          - $ref: "./index.yaml#/User"
         properties:
           member:
             allOf:
-              - $ref: "./index.yaml/#/GuildMember"
+              - $ref: "./index.yaml#/GuildMember"
             description: array of user objects, with an additional partial member field
       description: users specifically mentioned in the message
     mention_roles:
@@ -111,7 +109,7 @@ Message:
       nullable: true
     application:
       allOf:
-        - $ref: "./index.yaml/#/Application"
+        - $ref: "./index.yaml#/Application"
       description: sent with Rich Presence-related chat embeds
       nullable: true
     application_id:
@@ -138,7 +136,7 @@ Message:
       nullable: true
     interaction:
       allOf:
-        - $ref: "./index.yaml/#/MessageInteraction"
+        - $ref: "./index.yaml#/MessageInteraction"
       description: sent if the message is a response to an Interaction
       nullable: true
       externalDocs:
@@ -152,7 +150,7 @@ Message:
       type: array
       items:
         allOf:
-          - $ref: "./index.yaml/#/Component"
+          - $ref: "./index.yaml#/Component"
         description: Array of message components
       description: sent if the message contains components like buttons, action rows, or other interactive components
       nullable: true
@@ -166,7 +164,7 @@ Message:
       type: array
       items:
         allOf:
-          - $ref: "./index.yaml/#/Sticker"
+          - $ref: "./index.yaml#/Sticker"
       description: Deprecated the stickers sent with the message
       nullable: true
       deprecated: true
@@ -248,7 +246,7 @@ Reaction:
       description: whether the current user reacted using this emoji
     emoji:
       allOf:
-        - $ref: "./index.yaml/#/Emoji"
+        - $ref: "./index.yaml#/Emoji"
       description: emoji information
   externalDocs:
     url: https://canary.discord.com/developers/docs/resources/channel#reaction-object
@@ -593,7 +591,7 @@ Channel:
       type: array
       items:
         allOf:
-          - $ref: "./index.yaml/#/User"
+          - $ref: "./index.yaml#/User"
       description: the recipients of the DM
       nullable: true
     icon:

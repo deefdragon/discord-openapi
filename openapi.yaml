@@ -21,25 +21,145 @@ externalDocs:
   description: Discord Developer Documentation
 paths:
   /guilds/:guildId/audit-logs:
-    $ref: "./paths/audit_log.yaml/#/GetGuildAuditLog"
+    $ref: "./paths/audit_log.yaml#/GetGuildAuditLog"
   /channels/:channelId:
-    $ref: "./paths/channel.yaml/#/Channel"
+    $ref: "./paths/channel.yaml#/Channel"
 components:
-  callbacks:
-    $ref: "./components/callbacks/index.yaml"
-  examples:
-    $ref: "./components/examples/index.yaml"
-  headers:
-    $ref: "./components/headers/index.yaml"
-  links:
-    $ref: "./components/links/index.yaml"
-  parameters:
-    $ref: "./components/parameters/index.yaml"
-  requestBodies:
-    $ref: "./components/request_bodies/index.yaml"
-  responses:
-    $ref: "./components/responses/index.yaml"
+  #callbacks:
+  #  $ref: "./components/callbacks/index.yaml"
+  #examples:
+  #  $ref: "./components/examples/index.yaml"
+  #headers:
+  #  $ref: "./components/headers/index.yaml"
+  #links:
+  #  $ref: "./components/links/index.yaml"
+  #parameters:
+  #  $ref: "./components/parameters/index.yaml"
+  #requestBodies:
+  #  $ref: "./components/request_bodies/index.yaml"
+  #responses:
+  #  $ref: "./components/responses/index.yaml"
   schemas:
-    $ref: "./components/schemas/index.yaml"
-  securitySchemes:
-    $ref: "./components/security_schemes/index.yaml"
+    Application:
+      $ref: "./components/schemas/index.yaml#/Application"
+    User:
+      $ref: "./components/schemas/index.yaml#/User"
+    Team:
+      $ref: "./components/schemas/index.yaml#/Team"
+    TeamMembers:
+      $ref: "./components/schemas/index.yaml#/TeamMembers"
+    AuditLog:
+      $ref: "./components/schemas/index.yaml#/AuditLog"
+    AuditLogEntry:
+      $ref: "./components/schemas/index.yaml#/AuditLogEntry"
+    AuditLogChange:
+      $ref: "./components/schemas/index.yaml#/AuditLogChange"
+    Channel:
+      $ref: "./components/schemas/index.yaml#/Channel"
+    ThreadMember:
+      $ref: "./components/schemas/index.yaml#/ThreadMember"
+    ThreadMetadata:
+      $ref: "./components/schemas/index.yaml#/ThreadMetadata"
+    Overwrite:
+      $ref: "./components/schemas/index.yaml#/Overwrite"
+    Emoji:
+      $ref: "./components/schemas/index.yaml#/Emoji"
+    PresenceUpdate:
+      $ref: "./components/schemas/index.yaml#/PresenceUpdate"
+    Activity:
+      $ref: "./components/schemas/index.yaml#/Activity"
+    ActivityEmoji:
+      $ref: "./components/schemas/index.yaml#/ActivityEmoji"
+    ActivityParty:
+      $ref: "./components/schemas/index.yaml#/ActivityParty"
+    ActivityAssets:
+      $ref: "./components/schemas/index.yaml#/ActivityAssets"
+    ActivitySecrets:
+      $ref: "./components/schemas/index.yaml#/ActivitySecrets"
+    ActivityButtons:
+      $ref: "./components/schemas/index.yaml#/ActivityButtons"
+    ActivityTimestamps:
+      $ref: "./components/schemas/index.yaml#/ActivityTimestamps"
+    ClientStatus:
+      $ref: "./components/schemas/index.yaml#/ClientStatus"
+    Integration:
+      $ref: "./components/schemas/index.yaml#/Integration"
+    IntegrationAccount:
+      $ref: "./components/schemas/index.yaml#/IntegrationAccount"
+    IntegrationApplication:
+      $ref: "./components/schemas/index.yaml#/IntegrationApplication"
+    Guild:
+      $ref: "./components/schemas/index.yaml#/Guild"
+    WelcomeScreen:
+      $ref: "./components/schemas/index.yaml#/WelcomeScreen"
+    WelcomeScreenChannel:
+      $ref: "./components/schemas/index.yaml#/WelcomeScreenChannel"
+    GuildMember:
+      $ref: "./components/schemas/index.yaml#/GuildMember"
+    Role:
+      $ref: "./components/schemas/index.yaml#/Role"
+    RoleTags:
+      $ref: "./components/schemas/index.yaml#/RoleTags"
+    StageInstance:
+      $ref: "./components/schemas/index.yaml#/StageInstance"
+    Sticker:
+      $ref: "./components/schemas/index.yaml#/Sticker"
+    VoiceState:
+      $ref: "./components/schemas/index.yaml#/VoiceState"
+    Webhook:
+      $ref: "./components/schemas/index.yaml#/Webhook"
+    Message:
+      $ref: "./components/schemas/index.yaml#/Message"
+    ChannelMention:
+      $ref: "./components/schemas/index.yaml#/ChannelMention"
+    Attachment:
+      $ref: "./components/schemas/index.yaml#/Attachment"
+    Embed:
+      $ref: "./components/schemas/index.yaml#/Embed"
+    EmbedFooter:
+      $ref: "./components/schemas/index.yaml#/EmbedFooter"
+    EmbedField:
+      $ref: "./components/schemas/index.yaml#/EmbedField"
+    EmbedAuthor:
+      $ref: "./components/schemas/index.yaml#/EmbedAuthor"
+    EmbedProvider:
+      $ref: "./components/schemas/index.yaml#/EmbedProvider"
+    EmbedImage:
+      $ref: "./components/schemas/index.yaml#/EmbedImage"
+    EmbedVideo:
+      $ref: "./components/schemas/index.yaml#/EmbedVideo"
+    EmbedThumbnail:
+      $ref: "./components/schemas/index.yaml#/EmbedThumbnail"
+    Reaction:
+      $ref: "./components/schemas/index.yaml#/Reaction"
+    MessageActivity:
+      $ref: "./components/schemas/index.yaml#/MessageActivity"
+    MessageReference:
+      $ref: "./components/schemas/index.yaml#/MessageReference"
+    MessageInteraction:
+      $ref: "./components/schemas/index.yaml#/MessageInteraction"
+    Component:
+      $ref: "./components/schemas/index.yaml#/Component"
+    SelectOption:
+      $ref: "./components/schemas/index.yaml#/SelectOption"
+    MessageStickerItem:
+      $ref: "./components/schemas/index.yaml#/MessageStickerItem"
+    Invite:
+      $ref: "./components/schemas/index.yaml#/Invite"
+    InviteStageInstance:
+      $ref: "./components/schemas/index.yaml#/InviteStageInstance"
+    InviteMetadata:
+      $ref: "./components/schemas/index.yaml#/InviteMetadata"
+    GuildPreview:
+      $ref: "./components/schemas/index.yaml#/GuildPreview"
+    GuildWidget:
+      $ref: "./components/schemas/index.yaml#/GuildWidget"
+    Ban:
+      $ref: "./components/schemas/index.yaml#/Ban"
+    GuildTemplate:
+      $ref: "./components/schemas/index.yaml#/GuildTemplate"
+    VoiceRegion:
+      $ref: "./components/schemas/index.yaml#/VoiceRegion"
+
+  #securitySchemes:
+  #  $ref: "./components/security_schemes/index.yaml"

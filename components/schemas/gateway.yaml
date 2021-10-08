@@ -5,7 +5,7 @@ PresenceUpdate:
   properties:
     user:
       allOf:
-        - $ref: "./index.yaml/#/User"
+        - $ref: "./index.yaml#/User"
       description: the user presence is being updated for
     guild_id:
       type: string
